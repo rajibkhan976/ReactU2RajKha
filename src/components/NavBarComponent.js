@@ -11,9 +11,9 @@ class NavBarComponent extends Component {
       <Router>
         <div className="sideBar">
           <nav className="menu">
-            <Link to="/">Login</Link> <br/>
-            <Link to="/dashboard">Dashboard</Link> <br/>
-            <Link to="/user">User</Link> <br/>
+            <NavLink to="/" activeStyle={{color: 'pink'}}>Login</NavLink> <br/>
+            <NavLink to="/dashboard" activeStyle={{color: 'pink'}}>Dashboard</NavLink> <br/>
+            <NavLink to="/user" activeStyle={{color: 'pink'}}>User</NavLink>
           </nav>
             <Route path="/" exact component={LoginScreenComponent} />
             <Route path="/dashboard" component={DashboardScreenComponent} />

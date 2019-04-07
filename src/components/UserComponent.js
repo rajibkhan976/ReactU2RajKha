@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 /* UserComponent shows the user list and also toggle the text color based on the props it received from the DashboardComponent*/
 class UserComponent extends Component {
@@ -21,5 +22,9 @@ class UserComponent extends Component {
     );
   }
 }
+//defining prop types for the props users
+UserComponent.propTypes = {
+  users: PropTypes.array.isRequired
+};
 
 export default UserComponent;
