@@ -4,6 +4,7 @@ import LoginScreenComponent from './../screens/LoginScreen/LoginScreenComponent'
 import DashboardScreenComponent from './../screens/DashboardScreen/DashboardScreenComponent';
 import UserScreenComponent from './../screens/UserScreen/UserScreenComponent';
 
+//this class manages the naviagtion and routing among the different pages
 class NavBarComponent extends Component {
   render () {
     return (

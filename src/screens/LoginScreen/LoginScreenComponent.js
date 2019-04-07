@@ -2,18 +2,20 @@ import React, { Component } from 'react';
 import styles from '../../components/WrapperComponentCSS.module.css';
 import { Redirect } from 'react-router-dom'
 
+/* This class handles the login functionalities*/
 class LoginScreenComponent extends Component {
 
   constructor (props) {
     super (props);
+    //definition of login status and error message
     this.state = {loginStatus: false, errorMessage: ''};
   }
-
+  //method for hadling login input
   handleLoginCredential = (e) => {
     this.loginCredential = e.target.value;
     console.log(typeof this.loginCredential);
   }
-
+  //method for checking login status
   logInChecker = (e) => {
     if (this.loginCredential === undefined) {
       this.setState({loginStatus: false});
@@ -21,7 +23,7 @@ class LoginScreenComponent extends Component {
       this.setState({loginStatus: true});
     }
   }
-
+  //method for setting error message
   errorHandler = (e) => {
     if (!this.state.loginStatus) {
       this.setState({errorMessage: 'You need to click on the button to login:)'});
@@ -29,7 +31,7 @@ class LoginScreenComponent extends Component {
       this.setState({errorMessage: ''});
     }
   }
-
+ //rendering the login form or the dashboard component in case login status is true
   render () {
     if (this.state.loginStatus) {
       return <Redirect to="/dashboard" />;
