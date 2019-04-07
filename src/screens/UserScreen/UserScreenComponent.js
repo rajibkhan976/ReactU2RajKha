@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from '../../components/WrapperComponentCSS.module.css';
+import PropTypes from 'prop-types';
 
 class UserScreenComponent extends Component {
  constructor (props) {
@@ -15,5 +16,9 @@ class UserScreenComponent extends Component {
    );
  }
 }
+
+UserScreenComponent.propTypes = {
+  id: PropTypes.string
+};
 
 export default UserScreenComponent;
