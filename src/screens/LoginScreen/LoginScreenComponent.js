@@ -13,7 +13,6 @@ class LoginScreenComponent extends Component {
   //method for hadling login input
   handleLoginCredential = (e) => {
     this.loginCredential = e.target.value;
-    console.log(typeof this.loginCredential);
   }
   //method for checking login status
   logInChecker = (e) => {
