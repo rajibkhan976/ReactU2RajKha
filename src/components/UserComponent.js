@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 /* UserComponent shows the user list and also toggle the text color based on the props it received from the DashboardComponent*/
 class UserComponent extends Component {
@@ -12,7 +13,7 @@ class UserComponent extends Component {
     return (
         <ul className="list-group">
           {users.map((user, key) =>
-            <li className="list-group-item" style={{color: this.props.textColor}} key={key}>{user}</li>
+            <Link to={`/user/${user}`} key={key}><li className="list-group-item" style={{color: this.props.textColor}} key={key}>{user}</li></Link>
           )}
             <br/>
             <button type="button" className="btn btn-primary" onClick={this.props.toggleTextColor}>Toggle Colors</button>

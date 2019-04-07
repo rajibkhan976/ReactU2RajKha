@@ -7,8 +7,10 @@ class UserScreenComponent extends Component {
  }
 
  render () {
+   let userName = this.props.match.params.id;
    return (
      <div className={styles.cardOne}>
+      <h4>Selected user: <span>{(userName === undefined) ? "No user selected!" : userName}</span> </h4>
      </div>
    );
  }
