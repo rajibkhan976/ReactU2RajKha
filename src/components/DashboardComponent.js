@@ -11,18 +11,24 @@ class DashboardComponent extends Component {
     super(props);
     //definition of users and color state
     this.state = {users: [
-      'Pelle','Kalle'
+      {id: 1, name: 'Mimmi', isActive: true},
+      {id: 2, name: 'Kalle', isActive: false},
+      {id: 3, name: 'Klara', isActive: true},
+      {id: 4, name: 'John', isActive: true},
+      {id: 5, name: 'Stina', isActive: false}
     ],
     color: 'blue'
     };
   }
   //handling the value of input field
   handleInput = (e) => {
-    this.username = e.target.value;
+    this.userName = e.target.value;
+    this.userId = 5;
   }
   //method for adding users
   addUser = (e) => {
-    this.setState(prevState => ({users: [...prevState.users, this.username]}));
+    this.userId++;
+    this.setState(prevState => ({users: [...prevState.users, {id: this.userId, name: this.userName, isActive: true}]}));
   }
   //method for removing user
   removeUser = (e) => {

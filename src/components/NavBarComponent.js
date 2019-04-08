@@ -19,7 +19,7 @@ class NavBarComponent extends Component {
             <Route path="/dashboard" component={DashboardScreenComponent} />
             <Switch>
               <Route path="/user/:id" component={UserScreenComponent} />
-              <Route path="/user" component={UserScreenComponent} />
+              <Route path="/user" component={LoginScreenComponent} />
             </Switch>
         </div>
       </Router>
