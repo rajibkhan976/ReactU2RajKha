@@ -43,14 +43,14 @@ class DashboardComponent extends Component {
   render () {
     return (
       <CardComponent
-      left={<UserComponent users={this.state.users} textColor={this.state.color} toggleTextColor={this.toggleColor}/>}
-      right={(
-        <div>
-          <input className="form-control" type="text" onChange={this.handleInput}/> <br/>
-          <button type="button" className="btn btn-success btn-block" onClick={this.addUser}>Add</button>  <br/>
-          <button type="button" className="btn btn-danger btn-block" onClick={this.removeUser}>Remove</button>
-        </div>
-      )}>
+      left={<UserComponent users={this.state.users}
+      textColor={this.state.color}
+      toggleTextColor={this.toggleColor}/>}>
+      <div>
+        <input className="form-control" type="text" onChange={this.handleInput}/> <br/>
+        <button type="button" className="btn btn-success btn-block" onClick={this.addUser}>Add</button>  <br/>
+        <button type="button" className="btn btn-danger btn-block" onClick={this.removeUser}>Remove</button>
+      </div>
       </CardComponent>
     );
   }

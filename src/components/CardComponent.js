@@ -28,7 +28,7 @@ class CardComponent extends Component {
             <button type="button" className="btn btn-info" onClick={this.toggleLeftContent}>Show Content</button>
           </div>
           <div className={styles.cardTwo}>
-            {this.state.showRightContent ? this.props.right : null}
+            {this.state.showRightContent ? this.props.children : null}
             <hr/> <br/>
             <button type="button" className="btn btn-info" onClick={this.toggleRightContent}>Show Content</button>
           </div>

@@ -16,7 +16,7 @@ class UserComponent extends Component {
 
   //rendering the userlist and toggling the textColor
   render () {
-    const users = this.props.users;
+    let users = this.props.users;
     return (
         <div>
           <button type="button" className={this.state.toggleUserStatus ? "btn btn-primary btn-block" : "btn btn-dark btn-block"} onClick={this.userStatus}>Show Inactive</button> <br />
@@ -52,7 +52,7 @@ class UserComponent extends Component {
 }
 //defining prop types for the props users
 UserComponent.propTypes = {
-  users: PropTypes.array.isRequired
+  users: PropTypes.object.isRequired
 };
 
 export default UserComponent;

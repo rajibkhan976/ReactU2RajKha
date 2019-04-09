@@ -8,7 +8,7 @@ class LoginScreenComponent extends Component {
   constructor (props) {
     super (props);
     //definition of login status and error message
-    this.state = {loginStatus: false, errorMessage: ''};
+    this.state = {showInfo: false, errorMessage: ''};
   }
   //method for hadling login input
   handleLoginCredential = (e) => {
@@ -17,14 +17,14 @@ class LoginScreenComponent extends Component {
   //method for checking login status
   logInChecker = (e) => {
     if (this.loginCredential === undefined) {
-      this.setState({loginStatus: false});
+      this.setState({showInfo: false});
     } else {
-      this.setState({loginStatus: true});
+      this.setState({showInfo: true});
     }
   }
   //method for setting error message
   errorHandler = (e) => {
-    if (!this.state.loginStatus) {
+    if (!this.state.showInfo) {
       this.setState({errorMessage: 'You need to click on the button to login:)'});
     } else {
       this.setState({errorMessage: ''});
@@ -32,7 +32,7 @@ class LoginScreenComponent extends Component {
   }
  //rendering the login form or the dashboard component in case login status is true
   render () {
-    if (this.state.loginStatus) {
+    if (this.state.showInfo) {
       return <Redirect to="/dashboard" />;
     }
     return (
