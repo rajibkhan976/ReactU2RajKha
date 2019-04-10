@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import CardComponent from './CardComponent';
 
 /* UserComponent shows the user list and also toggle the text color based on the props it received from the DashboardComponent*/
 class UserComponent extends Component {
@@ -18,7 +19,7 @@ class UserComponent extends Component {
   render () {
     let users = this.props.users;
     return (
-        <div>
+      <div>
           <button type="button" className={this.state.toggleUserStatus ? "btn btn-primary btn-block" : "btn btn-dark btn-block"} onClick={this.userStatus}>Show Inactive</button> <br />
           <ul className="list-group">
             {users.map((user) => {
@@ -46,7 +47,7 @@ class UserComponent extends Component {
               <br/>
               <button type="button" className="btn btn-info" onClick={this.props.toggleTextColor}>Toggle Colors</button>
           </ul>
-        </div>
+      </div>
     );
   }
 }

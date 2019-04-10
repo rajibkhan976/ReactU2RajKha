@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import UserComponent from './UserComponent';
 import CardComponent from './CardComponent';
+import styles from './WrapperComponentCSS.module.css';
 
 /* DashboardComponent has two states, such as users and color. It has methods to add and remove users and to change the text Color
 of user name. Finally this class sends the UserComponent and the input fields along with two buttons as props to WrapperComponent.
@@ -42,16 +43,14 @@ class DashboardComponent extends Component {
   color and toggleColor method as props to UserComponent */
   render () {
     return (
-      <CardComponent
-      left={<UserComponent users={this.state.users}
-      textColor={this.state.color}
-      toggleTextColor={this.toggleColor}/>}>
-      <div>
-        <input className="form-control" type="text" onChange={this.handleInput}/> <br/>
-        <button type="button" className="btn btn-success btn-block" onClick={this.addUser}>Add</button>  <br/>
-        <button type="button" className="btn btn-danger btn-block" onClick={this.removeUser}>Remove</button>
-      </div>
-      </CardComponent>
+        <CardComponent
+        left={<UserComponent users={this.state.users}
+        textColor={this.state.color}
+        toggleTextColor={this.toggleColor}/>}>
+          <input className="form-control" type="text" onChange= {this.handleInput}/> <br/>
+          <button type="button" className="btn btn-success btn-block" onClick= {this.addUser}>Add</button>  <br/>
+          <button type="button" className="btn btn-danger btn-block" onClick= {this.removeUser}>Remove</button>
+        </CardComponent>
     );
   }
 }
